@@ -18,45 +18,41 @@ export default function Home() {
 	return (
 		<View className="flex-1 bg-base-50">
 			<StatusBar barStyle="dark-content" />
-			
+
 			{/* Top Section with white background */}
 			<View className="bg-base-white rounded-b-3xl pb-6">
-				<SafeAreaView edges={["top"]}>
-					<View className="px-4 pt-2">
-						{/* Header */}
-						<View className="mb-4">
-							<Header userName="Adam" />
-						</View>
+				<View className="px-4">
+					{/* Header */}
+					<Header userName="Adam" />
 
-						{/* Kindness Card */}
-						<View className="mb-8">
-							<KindnessCard />
-						</View>
-
-						{/* Chart Section */}
-						<View className="items-center mb-8">
-							<CircularProgress currentAmount={71} goalAmount={100} />
-						</View>
-
-						{/* Amount Selector */}
-						<View className="mb-6">
-							<AmountSelector
-								selectedAmount={selectedAmount}
-								onAmountSelect={setSelectedAmount}
-							/>
-						</View>
-
-						{/* Donate Button */}
-						<Button className="w-full h-12 bg-base-black rounded-full">
-							<Text className="text-base-white font-semibold">Donate</Text>
-						</Button>
+					{/* Kindness Card */}
+					<View className="mt-4 mb-4">
+						<KindnessCard />
 					</View>
-				</SafeAreaView>
+
+					{/* Chart Section */}
+					<View className="items-center mt-6 mb-6">
+						<CircularProgress currentAmount={71} goalAmount={100} />
+					</View>
+
+					{/* Amount Selector */}
+					<View className="mb-4">
+						<AmountSelector
+							selectedAmount={selectedAmount}
+							onAmountSelect={setSelectedAmount}
+						/>
+					</View>
+
+					{/* Donate Button */}
+					<Button className="w-full h-12 bg-base-black rounded-full">
+						<Text className="text-base-white font-semibold">Donate</Text>
+					</Button>
+				</View>
 			</View>
 
 			{/* Stats Section */}
-			<ScrollView 
-				className="flex-1 px-4" 
+			<ScrollView
+				className="flex-1 px-4"
 				showsVerticalScrollIndicator={false}
 				contentContainerStyle={{ paddingTop: 32, paddingBottom: 20 }}
 			>
@@ -91,13 +87,15 @@ export default function Home() {
 						value={
 							<View className="flex-row">
 								<Text className="text-lg font-semibold text-base-black">6</Text>
-								<Text className="text-lg font-semibold text-neutral-800">/24</Text>
+								<Text className="text-lg font-semibold text-neutral-800">
+									/24
+								</Text>
 							</View>
 						}
 					/>
 
 					{/* Impact Button */}
-					<TouchableOpacity className="flex-row items-center justify-between bg-base-white border border-neutral-600 rounded-full px-4 py-3 h-12">
+					<TouchableOpacity className="flex-row items-center justify-between border border-neutral-600 rounded-full px-4 py-3 h-12">
 						<Text className="text-sm font-semibold text-base-black">
 							What impact did I make?
 						</Text>

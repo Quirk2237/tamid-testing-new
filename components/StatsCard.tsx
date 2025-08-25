@@ -23,7 +23,7 @@ export default function StatsCard({
 	onPress,
 }: StatsCardProps) {
 	const Container = onPress ? TouchableOpacity : View;
-	
+
 	return (
 		<Container
 			onPress={onPress}
@@ -33,12 +33,14 @@ export default function StatsCard({
 				className="w-10 h-10 rounded-full items-center justify-center mr-4"
 				style={{ backgroundColor: iconBgColor }}
 			>
-				<Feather name={icon} size={20} color={iconColor} />
+				<Feather name={icon} size={20} color="white" />
 			</View>
 			<View className="flex-1 flex-row items-center justify-between">
 				<View className="flex-1">
 					<Text className="text-sm font-semibold text-base-black">{title}</Text>
-					<Text className="text-xs font-normal text-neutral-800">{subtitle}</Text>
+					<Text className="text-xs font-normal text-neutral-800">
+						{subtitle}
+					</Text>
 				</View>
 				{typeof value === "string" ? (
 					<Text className="text-lg font-semibold text-base-black">{value}</Text>

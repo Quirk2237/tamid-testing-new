@@ -25,7 +25,9 @@ export default function AmountSelector({
 				>
 					<Text
 						className={`text-sm ${
-							selectedAmount === amount ? "font-semibold text-base-black" : "font-normal text-neutral-800"
+							selectedAmount === amount
+								? "font-semibold text-base-black"
+								: "font-normal text-neutral-800"
 						}`}
 					>
 						${amount}
@@ -41,7 +43,9 @@ export default function AmountSelector({
 			>
 				<Text
 					className={`text-sm ${
-						selectedAmount === "other" ? "font-semibold text-base-black" : "font-normal text-neutral-800"
+						selectedAmount === "other"
+							? "font-semibold text-base-black"
+							: "font-normal text-neutral-800"
 					}`}
 				>
 					Other

@@ -8,6 +8,13 @@ config.resolver = {
 	...config.resolver,
 	unstable_conditionNames: ["browser"],
 	unstable_enablePackageExports: false,
+	assetExts: config.resolver.assetExts.filter((ext) => ext !== "svg"),
+	sourceExts: [...config.resolver.sourceExts, "svg"],
+};
+
+config.transformer = {
+	...config.transformer,
+	babelTransformerPath: require.resolve("react-native-svg-transformer"),
 };
 
 module.exports = withNativeWind(config, { input: "./global.css" });
