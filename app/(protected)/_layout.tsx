@@ -1,14 +1,9 @@
 import { Stack } from "expo-router";
-import { View } from "react-native";
-import Header from "@/components/Header";
+import { SafeAreaView } from "@/components/safe-area-view";
 
 export default function ProtectedLayout() {
 	return (
-		<View className="flex-1 bg-white dark:bg-gray-900">
-			<Header
-				userName="Adam"
-				onNotificationPress={() => console.log("Notification pressed")}
-			/>
+		<SafeAreaView className="flex-1 bg-white dark:bg-gray-900">
 			<Stack
 				screenOptions={{
 					headerShown: false,
@@ -17,6 +12,6 @@ export default function ProtectedLayout() {
 				<Stack.Screen name="(tabs)" />
 				<Stack.Screen name="modal" options={{ presentation: "modal" }} />
 			</Stack>
-		</View>
+		</SafeAreaView>
 	);
 }

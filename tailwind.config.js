@@ -5,6 +5,24 @@ module.exports = {
 	presets: [require("nativewind/preset")],
 	theme: {
 		extend: {
+			spacing: {
+				"2xs": "0.25rem", // 4px
+				xs: "0.5rem", // 8px
+				sm: "0.75rem", // 12px
+				base: "1rem", // 16px
+				md: "1.5rem", // 24px
+				lg: "2rem", // 32px
+				xl: "3rem", // 48px
+				"2xl": "4rem", // 64px
+				"3xl": "6rem", // 96px
+			},
+			borderRadius: {
+				xs: "4px", // Extra Small: icons, rings, input chips
+				sm: "8px", // Small: buttons, input fields, compact cards
+				md: "12px", // Medium: standard cards, modals, overlays
+				lg: "16px", // Large: surfaces, sidebar, modal containers
+				xl: "24px", // Extra Large: system layouts, hero blocks, premium UI
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

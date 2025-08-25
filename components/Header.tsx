@@ -15,7 +15,7 @@ export default function Header({
 }: HeaderProps) {
 	return (
 		<View
-			className="flex-row justify-between items-center px-6 pt-16 pb-4"
+			className="flex-row justify-between items-center px-6 pt-4 pb-4"
 			style={{ backgroundColor: "#F8F8F8" }}
 		>
 			<StatusBar barStyle="dark-content" />
