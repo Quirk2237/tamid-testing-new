@@ -48,6 +48,11 @@
 		"experiments": {
 			"typedRoutes": true
 		},
+		"fonts": [
+			"./assets/fonts/PlusJakartaSans-Regular.ttf",
+			"./assets/fonts/PlusJakartaSans-SemiBold.ttf",
+			"./assets/fonts/PlusJakartaSans-Bold.ttf"
+		],
 		"plugins": ["expo-router"]
 	}
 }

@@ -12,7 +12,7 @@ const H1 = React.forwardRef<TextRef, SlottableTextProps>(
 				role="heading"
 				aria-level="1"
 				className={cn(
-					"web:scroll-m-20 text-4xl text-foreground font-extrabold tracking-tight lg:text-5xl web:select-text",
+					"web:scroll-m-20 text-h1 font-jakarta-bold text-foreground web:select-text",
 					className,
 				)}
 				ref={ref}
@@ -32,7 +32,7 @@ const H2 = React.forwardRef<TextRef, SlottableTextProps>(
 				role="heading"
 				aria-level="2"
 				className={cn(
-					"web:scroll-m-20 border-b border-border pb-2 text-3xl text-foreground font-semibold tracking-tight first:mt-0 web:select-text",
+					"web:scroll-m-20 text-h2 font-jakarta-bold text-foreground first:mt-0 web:select-text",
 					className,
 				)}
 				ref={ref}
@@ -52,7 +52,7 @@ const H3 = React.forwardRef<TextRef, SlottableTextProps>(
 				role="heading"
 				aria-level="3"
 				className={cn(
-					"web:scroll-m-20 text-2xl text-foreground font-semibold tracking-tight web:select-text",
+					"web:scroll-m-20 text-h3 font-jakarta-semibold text-foreground web:select-text",
 					className,
 				)}
 				ref={ref}
@@ -63,6 +63,118 @@ const H3 = React.forwardRef<TextRef, SlottableTextProps>(
 );
 
 H3.displayName = "H3";
+
+const Subtitle = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-subtitle font-jakarta-semibold text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodyMSemiBold = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-m font-jakarta-semibold text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodyMRegular = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-m font-jakarta text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodySSemiBold = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-s font-jakarta-semibold text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodySRegular = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-s font-jakarta text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodyXSSemiBold = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-xs font-jakarta-semibold text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
+
+const BodyXSRegular = React.forwardRef<TextRef, SlottableTextProps>(
+	({ className, asChild = false, ...props }, ref) => {
+		const Component = asChild ? Slot.Text : RNText;
+		return (
+			<Component
+				className={cn(
+					"text-body-xs font-jakarta text-foreground web:select-text",
+					className,
+				)}
+				ref={ref}
+				{...props}
+			/>
+		);
+	},
+);
 
 const H4 = React.forwardRef<TextRef, SlottableTextProps>(
 	({ className, asChild = false, ...props }, ref) => {
@@ -82,6 +194,14 @@ const H4 = React.forwardRef<TextRef, SlottableTextProps>(
 	},
 );
 
+Subtitle.displayName = "Subtitle";
+BodyMSemiBold.displayName = "BodyMSemiBold";
+BodyMRegular.displayName = "BodyMRegular";
+BodySSemiBold.displayName = "BodySSemiBold";
+BodySRegular.displayName = "BodySRegular";
+BodyXSSemiBold.displayName = "BodyXSSemiBold";
+BodyXSRegular.displayName = "BodyXSRegular";
+
 H4.displayName = "H4";
 
 const P = React.forwardRef<TextRef, SlottableTextProps>(
@@ -89,7 +209,10 @@ const P = React.forwardRef<TextRef, SlottableTextProps>(
 		const Component = asChild ? Slot.Text : RNText;
 		return (
 			<Component
-				className={cn("text-base text-foreground web:select-text", className)}
+				className={cn(
+					"text-body-m font-jakarta text-foreground web:select-text",
+					className,
+				)}
 				ref={ref}
 				{...props}
 			/>
@@ -211,4 +334,23 @@ const Muted = React.forwardRef<TextRef, SlottableTextProps>(
 
 Muted.displayName = "Muted";
 
-export { BlockQuote, Code, H1, H2, H3, H4, Large, Lead, Muted, P, Small };
+export {
+	BlockQuote,
+	Code,
+	H1,
+	H2,
+	H3,
+	H4,
+	Large,
+	Lead,
+	Muted,
+	P,
+	Small,
+	Subtitle,
+	BodyMSemiBold,
+	BodyMRegular,
+	BodySSemiBold,
+	BodySRegular,
+	BodyXSSemiBold,
+	BodyXSRegular,
+};
