@@ -1,6 +1,7 @@
 import "../global.css";
 
 import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import * as SplashScreen from "expo-splash-screen";
 
 import { AuthProvider, useAuth } from "@/context/supabase-provider";
@@ -15,6 +16,7 @@ SplashScreen.setOptions({
 export default function RootLayout() {
 	return (
 		<AuthProvider>
+			<StatusBar style="dark" />
 			<RootNavigator />
 		</AuthProvider>
 	);

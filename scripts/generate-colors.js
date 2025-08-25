@@ -55,7 +55,7 @@ const darkRootColors = darkRootMatch ? extractColors(darkRootMatch[1]) : {};
 // Combine colors into a single object
 const colors = {
 	light: rootColors,
-	dark: darkRootColors,
+	...(Object.keys(darkRootColors).length > 0 && { dark: darkRootColors }),
 };
 
 // Generate colors.ts content

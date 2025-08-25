@@ -2,7 +2,6 @@
 module.exports = {
 	// NOTE: Update this to include the paths to all of your component files.
 	content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
-	darkMode: "class",
 	presets: [require("nativewind/preset")],
 	theme: {
 		extend: {
@@ -40,6 +39,44 @@ module.exports = {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
 				},
+				base: {
+					black: "#110f0b",
+					white: "#ffffff",
+					"white-80": "#ffffffcc",
+					50: "#f1f1f1",
+				},
+				neutral: {
+					100: "#f6f6f6",
+					200: "#f2f2f2",
+					400: "#e7e7e7",
+					600: "#d6d6d6",
+					800: "#808080",
+				},
+				olive: {
+					100: "#f7f8f0",
+					200: "#eff1e1",
+					400: "#dee2c3",
+					600: "#bdc587",
+					800: "#adb769",
+				},
+				blue: {
+					100: "#f2f5fd",
+					200: "#e4eafa",
+					400: "#c9d6f5",
+					600: "#94adeb",
+					800: "#7998e6",
+				},
+				violet: {
+					100: "#faf8fe",
+					200: "#f4effc",
+					400: "#eadff8",
+					600: "#d5c0f1",
+					800: "#cab0ee",
+				},
+				orange: {
+					800: "#e6b379",
+				},
+				gray: "#717171",
 			},
 		},
 	},

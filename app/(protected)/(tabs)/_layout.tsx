@@ -1,31 +1,41 @@
 import React from "react";
 import { Tabs } from "expo-router";
-
-import { useColorScheme } from "@/lib/useColorScheme";
-import { colors } from "@/constants/colors";
+import { Feather } from "@expo/vector-icons";
 
 export default function TabsLayout() {
-	const { colorScheme } = useColorScheme();
-
 	return (
 		<Tabs
 			screenOptions={{
 				headerShown: false,
-				tabBarStyle: {
-					backgroundColor:
-						colorScheme === "dark"
-							? colors.dark.background
-							: colors.light.background,
-				},
-				tabBarActiveTintColor:
-					colorScheme === "dark"
-						? colors.dark.foreground
-						: colors.light.foreground,
-				tabBarShowLabel: false,
 			}}
 		>
-			<Tabs.Screen name="index" options={{ title: "Home" }} />
-			<Tabs.Screen name="settings" options={{ title: "Settings" }} />
+			<Tabs.Screen
+				name="index"
+				options={{
+					title: "Home",
+					tabBarIcon: ({ color, size }) => (
+						<Feather name="home" size={size} color={color} />
+					),
+				}}
+			/>
+			<Tabs.Screen
+				name="feed"
+				options={{
+					title: "Feed",
+					tabBarIcon: ({ color, size }) => (
+						<Feather name="activity" size={size} color={color} />
+					),
+				}}
+			/>
+			<Tabs.Screen
+				name="calendar"
+				options={{
+					title: "Calendar",
+					tabBarIcon: ({ color, size }) => (
+						<Feather name="calendar" size={size} color={color} />
+					),
+				}}
+			/>
 		</Tabs>
 	);
 }
