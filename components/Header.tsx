@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, StatusBar } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { Text } from "@/components/ui/text";
 
 interface HeaderProps {
 	userName: string;
@@ -14,32 +15,29 @@ export default function Header({
 	onNotificationPress,
 }: HeaderProps) {
 	return (
-		<View
-			className="flex-row justify-between items-center px-6 pt-4 pb-4"
-			style={{ backgroundColor: "#F8F8F8" }}
-		>
-			<StatusBar barStyle="dark-content" />
-
-			<View className="flex-row items-center">
-				<Image
-					source={
-						avatarSource ? { uri: avatarSource } : require("@/assets/icon.png")
-					}
-					className="w-8 h-8 rounded-full mr-3"
-				/>
-				<Text
-					className="text-lg"
-					style={{ fontWeight: "400", fontSize: 18, color: "#000000" }}
-				>
+		<View className="flex-row justify-between items-center">
+			<View className="flex-row items-center gap-3">
+				<View className="w-10 h-10 rounded-full bg-violet-200 overflow-hidden">
+					{avatarSource ? (
+						<Image
+							source={{ uri: avatarSource }}
+							className="w-10 h-10"
+							resizeMode="cover"
+						/>
+					) : (
+						<View className="w-10 h-10 bg-violet-200" />
+					)}
+				</View>
+				<Text className="text-sm font-semibold text-base-black">
 					Hello, {userName}!
 				</Text>
 			</View>
 
 			<TouchableOpacity
 				onPress={onNotificationPress}
-				className="w-8 h-8 justify-center items-center"
+				className="w-6 h-6 justify-center items-center"
 			>
-				<Feather name="bell" size={20} color="#999999" />
+				<Feather name="bell" size={18} color="#808080" />
 			</TouchableOpacity>
 		</View>
 	);
